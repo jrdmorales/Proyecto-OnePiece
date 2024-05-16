@@ -1,0 +1,100 @@
+[
+    {
+        "_id": 1,
+        "nombre": "Going Merry",
+        "tipo": "Galera",
+        "tripulacion_id": 1,
+        "estado": "Destruido"
+    },
+    {
+        "_id": 2,
+        "nombre": "Thousand Sunny",
+        "tipo": "Galeón",
+        "tripulacion_id": 2,
+        "estado": "Activo"
+    },
+    {
+        "_id": 3,
+        "nombre": "Red Force",
+        "tipo": "Brigantino",
+        "tripulacion_id": 3,
+        "estado": "Activo"
+    },
+    {
+        "_id": 4,
+        "nombre": "Moby Dick",
+        "tipo": "Galeón",
+        "tripulacion_id": 4,
+        "estado": "Activo"
+    },
+    {
+        "_id": 5,
+        "nombre": "Victoria Punk",
+        "tipo": "Fragata",
+        "tripulacion_id": 5,
+        "estado": "Destruido"
+    },
+    {
+        "_id": 6,
+        "nombre": "Nostra Castello",
+        "tipo": "Barco de guerra",
+        "tripulacion_id": 6,
+        "estado": "Activo"
+    },
+    {
+        "_id": 7,
+        "nombre": "Oro Jackson",
+        "tipo": "Galera",
+        "tripulacion_id": 7,
+        "estado": "Destruido"
+    },
+    {
+        "_id": 8,
+        "nombre": "Sniper Island",
+        "tipo": "Barco de guerra",
+        "tripulacion_id": 8,
+        "estado": "Activo"
+    },
+    {
+        "_id": 9,
+        "nombre": "New Witch's Tongue",
+        "tipo": "Corbeta",
+        "tripulacion_id": 9,
+        "estado": "Activo"
+    },
+    {
+        "_id": 10,
+        "nombre": "Karasumaru",
+        "tipo": "Galeón",
+        "tripulacion_id": 10,
+        "estado": "Activo"
+    },
+    {
+        "_id": 11,
+        "nombre": "Shiro Mokuba I",
+        "tipo": "Corbeta",
+        "tripulacion_id": 11,
+        "estado": "Activo"
+    },
+    {
+        "_id": 12,
+        "nombre": "Shiro Mokuba IV",
+        "tipo": "Corbeta",
+        "tripulacion_id": 12,
+        "estado": "Activo"
+    },
+    {
+        "_id": 13,
+        "nombre": "Miss Love Duck",
+        "tipo": "Barco de pasajeros",
+        "tripulacion_id": 13,
+        "estado": "Activo"
+    },
+    {
+        "_id": 14,
+        "nombre": "Big Top",
+        "tipo": "Barco de pasajeros",
+        "tripulacion_id": 14,
+        "estado": "Activo"
+    }
+]
