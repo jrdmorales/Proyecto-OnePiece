@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Piece</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </head>
 <header>
     <nav>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ url_for('personajes') }}">Personajes</a>
+              <a class="nav-link " href="{{ url_for('home') }}">INICIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "href="{{ url_for('personajes') }}">Personajes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('barcos') }}">Barcos</a>
@@ -28,45 +33,76 @@
     </nav>
 </header>
 <body>
-    <h1>One Piece</h1>
-    <section class="search">
-        <form action="/buscar_islas" method="GET">
-            <input type="text" name="search" placeholder="nombre isla">
-            <button type="submit">Buscar</button>
-        </form>
-    </section>
-    <h1>Lista de Islas</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>Nombre</th>
-                <th>Localizacion</th>
-                <th>habitantes</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for isla in islas %}
-                <tr>
-                    <td>{{ isla._id }}</td>
-                    <td>{{ isla.nombre }}</td>
-                    <td>{{ isla.localizacion }}</td>
-                    <td>{{ isla.habitantes }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-      </table>
-    <form action="/agregar_isla" method="POST">
-        <input type="text" name="nombre" placeholder="nombre isla">
-        <input type="text" name="localizacion" placeholder="localizacion isla">
-        <input type="text" name="habitantes" placeholder="habitantes isla">
-        <button type="submit">Agregar</button>
-    </form>
-    <form action="/eliminar_isla" method="POST">
-        <input type="text" name="nombre" placeholder="nombre isla">
-        <button type="submit">Eliminar</button>
-    </form>
+    <div class="container">
+        <h1>One Piece</h1>
+        <section class="search">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search" action="/buscar_islas" method="GET">
+                        <input class="form-control me-2" type="text" name="search" placeholder="nombre isla">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </nav>
+        </section>
 
-    
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Lista de Islas</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Nombre</th>
+                            <th>Localizacion</th>
+                            <th>Habitantes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for isla in islas %}
+                            <tr>
+                                <td>{{ isla._id }}</td>
+                                <td>{{ isla.nombre }}</td>
+                                <td>{{ isla.localizacion }}</td>
+                                <td>{{ isla.habitantes }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <h2>Agregar Isla</h2>
+                <form action="/agregar_isla" method="POST" class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-12">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="localizacion" class="form-label">Localización</label>
+                        <input type="text" name="localizacion" class="form-control" id="localizacion" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="habitantes" class="form-label">Habitantes</label>
+                        <input type="text" name="habitantes" class="form-control" id="habitantes" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+                    </div>
+                </form>
+
+                <h2 class="mt-4">Eliminar Isla</h2>
+                <form action="/eliminar_isla" method="POST" class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-12">
+                        <label for="eliminar_nombre" class="form-label">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" id="eliminar_nombre" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
 </body>
 </html>
