@@ -16,7 +16,12 @@ def buscar_tipos_frutas():
 
 @tipos_frutas_bp.route('/agregar', methods=['POST'])
 def agregar_tipo_fruta():
-    db.db.tipos_frutas.insert_one({'nombre': request.form['nombre']})
+    total_documentos = db.db.tipos_frutas.count_documents({})
+    # Calcular el nuevo ID
+    nuevo_id = total_documentos + 1
+    # Insertar el nuevo documento con el nuevo ID
+    db.db.tipos_frutas.insert_one({'_id': nuevo_id,
+                                   'nombre': request.form['nombre']})
     return redirect(url_for('tipos_frutas.tipos_frutas'))
 
 @tipos_frutas_bp.route('/eliminar', methods=['POST'])

@@ -24,10 +24,9 @@ def buscar_tripulaciones():
 
 @tripulaciones_bp.route('/agregar', methods=['POST'])
 def agregar_tripulacion():
-    # Obtener el número total de documentos
     total_documentos = db.db.tripulaciones.count_documents({})
     # Calcular el nuevo ID
-    nuevo_id = total_documentos + 1
+    nuevo_id = total_documentos + 2
     # Insertar el nuevo documento con el nuevo ID
     db.db.tripulaciones.insert_one({
         '_id': nuevo_id,

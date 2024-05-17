@@ -25,8 +25,12 @@ def buscar_barcos():
 
 @barcos_bp.route('/agregar', methods=['POST'])
 def agregar_barco():
+    total_documentos = db.db.barcos.count_documents({})
+    # Calcular el nuevo ID
+    nuevo_id = total_documentos + 1
+    # Insertar el nuevo documento con el nuevo ID
     db.db.barcos.insert_one({
-        '_id': ObjectId(),
+        '_id': nuevo_id,
         'nombre': request.form['nombre'],
         'tipo': request.form['tipo'],
         'tripulacion_id': request.form['tripulacion_id'],

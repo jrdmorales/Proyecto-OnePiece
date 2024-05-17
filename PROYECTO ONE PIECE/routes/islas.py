@@ -23,7 +23,12 @@ def buscar_islas():
 
 @islas_bp.route('/agregar', methods=['POST'])
 def agregar_isla():
+    total_documentos = db.db.islas.count_documents({})
+    # Calcular el nuevo ID
+    nuevo_id = total_documentos + 1
+    # Insertar el nuevo documento con el nuevo ID
     db.db.islas.insert_one({
+        '_id': nuevo_id,
         'nombre': request.form['nombre'],
         'localizacion': request.form['localizacion'],
         'habitantes': request.form['habitantes']

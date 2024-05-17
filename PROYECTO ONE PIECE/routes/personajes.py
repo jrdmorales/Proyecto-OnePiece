@@ -27,7 +27,12 @@ def buscar_personajes():
 
 @personajes_bp.route('/agregar', methods=['POST'])
 def agregar_personaje():
+    total_documentos = db.db.personajes.count_documents({})
+    # Calcular el nuevo ID
+    nuevo_id = total_documentos + 1
+    # Insertar el nuevo documento con el nuevo ID
     db.db.personajes.insert_one({
+        '_id': nuevo_id,
         'nombre': request.form['nombre'],
         'rol': request.form['rol'],
         'fruta_del_diablo': request.form['fruta_del_diablo'],
