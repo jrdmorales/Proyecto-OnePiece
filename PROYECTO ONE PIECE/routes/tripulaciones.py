@@ -24,13 +24,20 @@ def buscar_tripulaciones():
 
 @tripulaciones_bp.route('/agregar', methods=['POST'])
 def agregar_tripulacion():
+    # Obtener el número total de documentos
+    total_documentos = db.db.tripulaciones.count_documents({})
+    # Calcular el nuevo ID
+    nuevo_id = total_documentos + 1
+    # Insertar el nuevo documento con el nuevo ID
     db.db.tripulaciones.insert_one({
+        '_id': nuevo_id,
         'nombre': request.form['nombre'],
         'capitan_id': request.form['capitan_id'],
         'numero_de_integrantes': request.form['numero_de_integrantes'],
         'localizacion_actual': request.form['localizacion_actual']
     })
     return redirect(url_for('tripulaciones.tripulaciones'))
+
 
 @tripulaciones_bp.route('/eliminar', methods=['POST'])
 def eliminar_tripulacion():

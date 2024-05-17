@@ -39,7 +39,7 @@
         <section class="search">
             <nav class="navbar bg-body-tertiary">
                 <div class="container-fluid">
-                    <form class="d-flex" role="search" action="/buscar_tripulaciones" method="GET">
+                    <form class="d-flex" role="search" action="{{ url_for('tripulaciones.buscar_tripulaciones') }}" method="GET">
                         <input class="form-control me-2" type="text" name="search" placeholder="nombre tripulacion">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
@@ -75,7 +75,7 @@
             </div>
             <div class="col-md-4">
                 <h2>Agregar Tripulación</h2>
-                <form action="/agregar_tripulacion" method="POST" class="row g-3 needs-validation" novalidate>
+                <form action="{{ url_for('tripulaciones.agregar_tripulacion') }}" method="POST" class="row g-3 needs-validation" novalidate>
                     <div class="col-md-12">
                         <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" name="nombre" class="form-control" id="nombre" required>
@@ -98,7 +98,7 @@
                 </form>
 
                 <h2 class="mt-4">Eliminar Tripulación</h2>
-                <form action="/eliminar_tripulacion" method="POST" class="row g-3 needs-validation" novalidate>
+                <form action="{{ url_for('tripulaciones.eliminar_tripulacion') }}" method="POST" class="row g-3 needs-validation" novalidate>
                     <div class="col-md-12">
                         <label for="eliminar_nombre" class="form-label">Nombre</label>
                         <input type="text" name="nombre" class="form-control" id="eliminar_nombre" required>
