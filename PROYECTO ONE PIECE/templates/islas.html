@@ -12,24 +12,24 @@
     <nav>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-              <a class="nav-link " href="{{ url_for('home') }}">INICIO</a>
+              <a class="nav-link " href="{{ url_for('main.home') }}">INICIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link "href="{{ url_for('personajes') }}">Personajes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('barcos') }}">Barcos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('tripulaciones') }}">Tripulacion</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('islas') }}">Islas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('tipos_frutas') }}">Frutas del Diablo</a>
-            </li>
-          </ul>
+                <a class="nav-link "href="{{ url_for('personajes.personajes') }}">Personajes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('barcos.barcos') }}">Barcos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('tripulaciones.tripulaciones') }}">Tripulacion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('islas.islas') }}">Islas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('tipos_frutas.tipos_frutas') }}">Frutas del Diablo</a>
+              </li>
+            </ul>
     </nav>
 </header>
 <body>
